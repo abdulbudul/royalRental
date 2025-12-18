@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Portal — Royal Rental</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Royal Rental — Admin Portal</h1>
+    <nav class="nav">
+      <a href="/" class="nav-link">Browse</a>
+      <a href="/agent.html" class="nav-link">Agent Portal</a>
+      <a href="/admin.html" class="nav-link active">Admin Portal</a>
+      <button onclick="logout()" class="btn btn-primary" style="margin-left: auto;">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="authPanel">
+      <div class="auth-form">
+        <h2>Admin Login</h2>
+        <div class="form-group">
+          <label>Email:</label>
+          <input id="email" type="email" placeholder="admin@royalrental.com" value="admin@royalrental.com">
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input id="password" type="password" placeholder="admin123" value="admin123">
+        </div>
+        <button class="btn btn-primary" onclick="loginAdmin()">Login</button>
+        <p style="font-size: 0.9em; color: #555; margin-top: 10px;">Demo: admin@royalrental.com / admin123</p>
+      </div>
+    </div>
+
+    <div id="adminPanel" style="display: none;">
+      <h2>Manage All Listings</h2>
+      <div style="margin-bottom: 12px;">
+        <label>Filter by status:
+          <select id="statusFilter" onchange="loadAllListings()">
+            <option value="">All</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+          </select>
+        </label>
+      </div>
+      <table id="listingsTable">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Uploaded By</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

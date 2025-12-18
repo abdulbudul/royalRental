@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Royal Rental — Lagos Listings</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Royal Rental — Lagos Properties</h1>
+    <nav class="nav">
+      <a href="/" class="nav-link active" onclick="showPublic()">Browse</a>
+      <a href="/agent.html" class="nav-link">Agent Portal</a>
+      <a href="/admin.html" class="nav-link">Admin Portal</a>
+    </nav>
+    <div class="filters">
+      <label>Area:
+        <select id="areaFilter">
+          <option value="all">All</option>
+          <option value="Island">Island</option>
+          <option value="Mainland">Mainland</option>
+        </select>
+      </label>
+      <label>Location:
+        <select id="locationFilter">
+          <option value="all">All</option>
+        </select>
+      </label>
+      <input id="searchInput" placeholder="Search title or description">
+      <button id="refreshBtn">Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="counts"></div>
+    <div id="listings"></div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
